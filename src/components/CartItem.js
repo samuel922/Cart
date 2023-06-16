@@ -1,16 +1,7 @@
 import React from "react";
 
 class CartItem extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            title: "Mobile Phone",
-            price: 10000,
-            qty: 1,
-            imgUrl: ""
-        }
-    }
-
+   
     increaseQuantity = () => {
         this.setState((prevState) => (
             {...prevState, qty: prevState.qty + 1}
