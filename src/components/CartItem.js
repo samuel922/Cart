@@ -1,20 +1,7 @@
 import React from "react";
 
 class CartItem extends React.Component {
-   
-    increaseQuantity = () => {
-        this.setState((prevState) => (
-            {...prevState, qty: prevState.qty + 1}
-        ))
-    }
 
-    decreaseQuantity = () => {
-        const { qty } = this.state;
-        if (qty === 0) return;
-        this.setState((prevState) => (
-            {...prevState, qty: prevState.qty -1}
-        ))
-    }
 
     render() {
         const styels = {
@@ -25,8 +12,19 @@ class CartItem extends React.Component {
                 background: '#ccc'
             }
         }
+        const {
+            product, 
+            onIncreaseQuantity, 
+            onDecreaseQuantity,
+            onDeleteProduct
+        } = this.props;
 
-        const { title, price, qty } = this.state;
+        const { 
+            title, 
+            price, 
+            qty 
+        } = product;
+
         return (
             <div className="cart-item">
                 <div className="left-block">
@@ -41,19 +39,20 @@ class CartItem extends React.Component {
                             src="https://cdn-icons-png.flaticon.com/128/992/992651.png" 
                             alt="increase" 
                             className="action-icons" 
-                            onClick={this.increaseQuantity}
+                            onClick={() => onIncreaseQuantity(product)}
 
                         />
                         <img 
                             src="https://cdn-icons-png.flaticon.com/128/1828/1828906.png" 
                             alt="decrease" 
                             className="action-icons" 
-                            onClick={this.decreaseQuantity}
+                            onClick={() => onDecreaseQuantity(product)}
                         />
                         <img 
                             src="https://cdn-icons-png.flaticon.com/128/1214/1214428.png" 
                             alt="delete" 
                             className="action-icons" 
+                            onClick={() => onDeleteProduct(product.id)}
                         />
                     </div>
                 </div>
