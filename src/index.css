@@ -13,6 +13,46 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Navbar stylings */
+.nav {
+  height: 70;
+  background: #4267b2;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cartContainer {
+  position: relative;
+}
+
+.cartIcon {
+  height: 32px;
+  margin-right: 20px;
+}
+.cartCount {
+  background: yellow;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  padding: 4px 8px;
+  position: absolute;
+  right: 25px;
+  top: 2px;
+}
+
+
+/* Endof navbar */
+
+.productImage {
+   width: 110px;
+  height: 110px;
+  background: #ccc;
+  border-radius: 4px;
+}
+
 
 .cart-item {
   display: inline-flex;
